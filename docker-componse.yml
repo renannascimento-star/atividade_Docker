@@ -1,0 +1,47 @@
+secrets:
+  db:
+    image: mysql:8.0
+    container_name: segcm_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: segcm
+      ports:
+        - "3307:3306"
+      Volumes:
+        - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin ping -h localhost -uroot - proot"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  api:
+    build: ./sgcm_api
+    container_name: segcm_api
+    environment:
+      DB_NAME: segcm
+      DB_USER: root
+      DB_PASSWORD: root
+      DB_HOST: db
+      SERVER_PORT: 9000
+      DDL_AUTO: "create-drop"
+    ports:
+      - "9000:9000"
+    depends_on:
+      db:
+        condition: service_healthy
+  app:
+    build: ./sgcmapp
+    container_name: segcm_app
+    volumes:
+      - ./sgcmapp:/app
+      - /app/node_modules
+    ports:
+      - "4200:4200"
+    depends_on:
+      - api
+    comand: npm start -- --host 0.0.0.0 --port 4200 --poll 2000
+
+volumes:
+  mysql_data:
+    

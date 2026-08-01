@@ -1,0 +1,24 @@
+<form>
+  <div class="grid">
+    <label for="nomeCompleto">Nome</label>
+    <input type="text" name="nomeCompleto" id="nomeCompleto" [(ngModel)]="registro().nomeCompleto">
+
+    <label for="nomeUsuario">Usuário</label>
+    <input type="text" name="nomeUsuario" id="nomeUsuario" [(ngModel)]="registro().nomeUsuario" required>
+
+    <label for="senha">Senha</label>
+    <input type="password" name="senha" id="senha" [(ngModel)]="registro().senha">
+
+    <label for="ativo">Ativo</label>
+    <input type="checkbox" name="ativo" id="ativo" [(ngModel)]="registro().ativo">
+
+    <label for="papel">Papel</label>
+    <select name="papel" id="papel" [(ngModel)]="registro().papel" required>
+      <option value="ATENDENTE">ATENDENTE</option>
+      <option value="ADMIN">ADMIN</option>
+    </select>
+  </div>
+
+  <input type="button" value="Cancelar" routerLink="/config/usuario-list">
+  <input type="button" value="Salvar" (click)="salvar()">
+</form>

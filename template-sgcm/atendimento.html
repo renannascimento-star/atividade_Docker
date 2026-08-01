@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SGCM - Atendimento</title>
+    <link rel="stylesheet" type="text/css" href="/css/estilo.css">
+    <script src="/js/script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div id="logo">
+        <img src="imagens/logo_branco.png" alt="Logo SGCM">
+        <span id="titulo">SGCM</span>
+      </div>
+      <div id="usuarioInfo">
+        <span>Usuário: Administrador (admin)</span>
+        <span>Papel: ADMIN</span>
+        <a href="javascript:void(0)"
+           class="botao">Logout</a>
+      </div>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="agenda.html">Agenda</a></li>
+        <li><a href="atendimento.html">Atendimento</a></li>
+        <li><a href="pacientes.html">Pacientes</a></li>
+        <li><a href="profissionais.html">Profissionais</a></li>
+        <li><a href="convenios.html">Convênios</a></li>
+        <li id="dropdown">
+          <a href="javascript:void(0)">
+            Configurações
+            <span>&#9660;</span>
+          </a>
+          <div id="dropdown_menu">
+            <a href="unidades.html">Unidades</a>
+            <a href="especialidades.html">Especialidades</a>
+            <a href="usuarios.html">Usuários</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <div id="comandos">
+        <a href="javascript:void(0)"
+           class="botao oculto"
+           id="add">
+          Adicionar
+        </a>
+        <div>
+          <label for="busca">Busca</label>
+          <input type="search" name="busca" id="busca"
+               placeholder="Digite para buscar">
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Hora</th>
+            <th>Paciente</th>
+            <th>Profissional</th>
+            <th>Unidade</th>
+            <th>Convênio</th>
+            <th>Atendimento</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="fit">08/07/2026</td>
+            <td class="fit">14:00</td>
+            <td>Paciente A</td>
+            <td>Profissional A</td>
+            <td>Unidade A</td>
+            <td>Unimed</td>
+            <td>
+              <a href="javascript:void(0)" class="botao iniciar inativo">Iniciar</a>
+              <a href="javascript:void(0)" class="botao finalizar excluir">Finalizar</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="fit">08/07/2026</td>
+            <td class="fit">14:30</td>
+            <td>Paciente B</td>
+            <td>Profissional B</td>
+            <td>Unidade B</td>
+            <td>Aliança</td>
+            <td>
+              <a href="javascript:void(0)" class="botao iniciar">Iniciar</a>
+              <a href="javascript:void(0)" class="botao finalizar excluir inativo">Finalizar</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="fit">08/07/2026</td>
+            <td class="fit">15:00</td>
+            <td>Paciente C</td>
+            <td>Profissional C</td>
+            <td>Unidade C</td>
+            <td>Unimed</td>
+            <td>
+              <a href="javascript:void(0)" class="botao iniciar">Iniciar</a>
+              <a href="javascript:void(0)" class="botao finalizar excluir inativo">Finalizar</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="fit">08/07/2026</td>
+            <td class="fit">15:30</td>
+            <td>Paciente D</td>
+            <td>Profissional D</td>
+            <td>Unidade D</td>
+            <td></td>
+            <td>
+              <a href="javascript:void(0)" class="botao iniciar">Iniciar</a>
+              <a href="javascript:void(0)" class="botao finalizar excluir inativo">Finalizar</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="fit">08/07/2026</td>
+            <td class="fit">16:00</td>
+            <td>Paciente E</td>
+            <td>Profissional E</td>
+            <td>Unidade E</td>
+            <td></td>
+            <td>
+              <a href="javascript:void(0)" class="botao iniciar">Iniciar</a>
+              <a href="javascript:void(0)" class="botao finalizar excluir inativo">Finalizar</a>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="7">Total de registros: 5</td>
+          </tr>
+        </tfoot>
+      </table>
+    </main>
+    <footer>
+      <span>SGCM - Sistema de Gerenciamento de Clínica Médica</span>
+      <span>Suporte técnico: (68) 5555-5555 | <a href="mailto:suporte.sgcm@ufac.br">suporte.sgcm@ufac.br</a></span>
+    </footer>
+  </body>
+</html>

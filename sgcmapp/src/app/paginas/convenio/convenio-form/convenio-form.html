@@ -1,0 +1,27 @@
+<form>
+  <div class="grid">
+    <label for="nome">Nome</label>
+    <input type="text" name="nome" id="nome" [(ngModel)]="registro().nome" required>
+
+    <label for="razaoSocial">Razão Social</label>
+    <input type="text" name="razaoSocial" id="razaoSocial" [(ngModel)]="registro().razaoSocial" required>
+
+    <label for="cnpj">CNPJ</label>
+    <input type="text" name="cnpj" id="cnpj" [(ngModel)]="registro().cnpj" required>
+
+    <label for="representante">Representante</label>
+    <input type="text" name="representante" id="representante" [(ngModel)]="registro().representante" required>
+
+    <label for="email">E-mail</label>
+    <input type="email" name="email" id="email" [(ngModel)]="registro().email" required>
+
+    <label for="telefone">Telefone</label>
+    <input type="text" name="telefone" id="telefone" [(ngModel)]="registro().telefone" required>
+
+    <label for="ativo">Ativo</label>
+    <input type="checkbox" name="ativo" id="ativo" [(ngModel)]="registro().ativo">
+  </div>
+
+  <input type="button" value="Cancelar" routerLink="/convenio-list">
+  <input type="button" value="Salvar" (click)="salvar()">
+</form>
